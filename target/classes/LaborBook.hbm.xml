@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.example.LaborBook" table="labor_book" schema="practice">
+        <id name="idLb">
+            <column name="id_lb" sql-type="int"/>
+        </id>
+        <property name="idEmployee">
+            <column name="id_employee" sql-type="int"/>
+        </property>
+        <property name="idOrganization">
+            <column name="id_organization" sql-type="int" not-null="true"/>
+        </property>
+        <property name="idProfession">
+            <column name="id_profession" sql-type="int" not-null="true"/>
+        </property>
+        <property name="notEduOrganization">
+            <column name="not_edu_organization" sql-type="varchar(128)" length="128" not-null="true"/>
+        </property>
+        <property name="notEduProfession">
+            <column name="not_edu_profession" sql-type="varchar(128)" length="128" not-null="true"/>
+        </property>
+        <property name="workMark">
+            <column name="work_mark" sql-type="varchar(256)" length="256" not-null="true"/>
+        </property>
+        <property name="dateFrom">
+            <column name="date_from" sql-type="date"/>
+        </property>
+        <property name="dateTo">
+            <column name="date_to" sql-type="date" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
